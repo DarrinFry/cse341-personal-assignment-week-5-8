@@ -1,0 +1,193 @@
+//LOCALHOST
+###
+GET http://localhost:8080/customer
+###
+GET http://localhost:8080/customer/628950b2b10a6306c3f809ee
+### 
+POST http://localhost:8080/customer/ HTTP/1.1 
+content-type: application/json
+
+ {
+  "client_name": "REST TEST",
+  "finger_size": "10",
+  "current_date": "1/1/12",
+  "project_volume": "400",
+  "s_08_12mm": "1.2",
+  "s_13_17mm": "0.4",
+  "s_18_26mm": "0.2",
+  "s_27_32mm": "0.15",
+  "s_33_35mm": "1",
+  "s_36_38mm": "0",
+  "s_39_41mm": "0",
+  "other_stone_1": "1250",
+  "other_stone_2": "0",
+  "parts_1": "123",
+  "parts_2": "456",
+  "prong_set_standard": "50",
+  "prong_set_fancy": "12",
+  "channel_set_standard": "2",
+  "channel_set_fancy": "2",
+  "bezel_flush_standard": "3",
+  "bezel_flush_fancy": "5",
+  "plating": "true",
+  "solder": "2",
+  "laser": "2",
+  "texture": "1",
+  "center_stone_settting_RETAIL": "350",
+  "other_labor_RETAIL": "50",
+  "casting": "true",
+  "CAD_modifier": "2"
+}    
+###
+PUT http://localhost:8080/customer/628964617e655f17037f7a71/ HTTP/1.1 
+content-type: application/json
+
+ {
+  "client_name": "REST TEST--EDITED",
+  "finger_size": "10",
+  "current_date": "1/1/12",
+  "project_volume": "400",
+  "s_08_12mm": "1.2",
+  "s_13_17mm": "0.4",
+  "s_18_26mm": "0.2",
+  "s_27_32mm": "0.15",
+  "s_33_35mm": "1",
+  "s_36_38mm": "0",
+  "s_39_41mm": "0",
+  "other_stone_1": "1250",
+  "other_stone_2": "0",
+  "parts_1": "123",
+  "parts_2": "456",
+  "prong_set_standard": "50",
+  "prong_set_fancy": "12",
+  "channel_set_standard": "2",
+  "channel_set_fancy": "2",
+  "bezel_flush_standard": "3",
+  "bezel_flush_fancy": "5",
+  "plating": "true",
+  "solder": "2",
+  "laser": "2",
+  "texture": "1",
+  "center_stone_settting_RETAIL": "350",
+  "other_labor_RETAIL": "50",
+  "casting": "true",
+  "CAD_modifier": "2"
+}   
+###
+DELETE http://localhost:8080/customer/628964617e655f17037f7a71 HTTP/1.1 
+content-type: application/json
+###
+
+//METAL LOCAL
+###
+GET http://localhost:8080/metal
+###
+GET http://localhost:8080/metal/6289582879dc6ac0bed4dda7
+
+###
+PUT http://localhost:8080/metal/6289582879dc6ac0bed4dda7/ HTTP/1.1
+content-type: application/json
+
+ {
+    "_id": "6289582879dc6ac0bed4dda7",
+    "metal_name": "PLATINUM",
+    "metal_price": "954.00",
+    "metal_transaction_modifier": "1.12"
+  }
+
+//HEROKU
+###
+GET https://d-fry-cse341-personal.herokuapp.com/customer
+###
+GET https://d-fry-cse341-personal.herokuapp.com/customer/628950b2b10a6306c3f809ee
+### 
+POST https://d-fry-cse341-personal.herokuapp.com/customer/ HTTP/1.1 
+content-type: application/json
+
+ {
+  "client_name": "REST TEST",
+  "finger_size": "10",
+  "current_date": "1/1/12",
+  "project_volume": "400",
+  "s_08_12mm": "1.2",
+  "s_13_17mm": "0.4",
+  "s_18_26mm": "0.2",
+  "s_27_32mm": "0.15",
+  "s_33_35mm": "1",
+  "s_36_38mm": "0",
+  "s_39_41mm": "0",
+  "other_stone_1": "1250",
+  "other_stone_2": "0",
+  "parts_1": "123",
+  "parts_2": "456",
+  "prong_set_standard": "50",
+  "prong_set_fancy": "12",
+  "channel_set_standard": "2",
+  "channel_set_fancy": "2",
+  "bezel_flush_standard": "3",
+  "bezel_flush_fancy": "5",
+  "plating": "true",
+  "solder": "2",
+  "laser": "2",
+  "texture": "1",
+  "center_stone_settting_RETAIL": "350",
+  "other_labor_RETAIL": "50",
+  "casting": "true",
+  "CAD_modifier": "2"
+}    
+###
+PUT https://d-fry-cse341-personal.herokuapp.com/customer/628964617e655f17037f7a71/ HTTP/1.1 
+content-type: application/json
+
+ {
+  "client_name": "REST TEST--EDITED",
+  "finger_size": "10",
+  "current_date": "1/1/12",
+  "project_volume": "400",
+  "s_08_12mm": "1.2",
+  "s_13_17mm": "0.4",
+  "s_18_26mm": "0.2",
+  "s_27_32mm": "0.15",
+  "s_33_35mm": "1",
+  "s_36_38mm": "0",
+  "s_39_41mm": "0",
+  "other_stone_1": "1250",
+  "other_stone_2": "0",
+  "parts_1": "123",
+  "parts_2": "456",
+  "prong_set_standard": "50",
+  "prong_set_fancy": "12",
+  "channel_set_standard": "2",
+  "channel_set_fancy": "2",
+  "bezel_flush_standard": "3",
+  "bezel_flush_fancy": "5",
+  "plating": "true",
+  "solder": "2",
+  "laser": "2",
+  "texture": "1",
+  "center_stone_settting_RETAIL": "350",
+  "other_labor_RETAIL": "50",
+  "casting": "true",
+  "CAD_modifier": "2"
+}   
+###
+DELETE https://d-fry-cse341-personal.herokuapp.com/customer/628964617e655f17037f7a71 HTTP/1.1 
+content-type: application/json
+###
+
+//METAL HEROKU
+###
+GET https://d-fry-cse341-personal.herokuapp.com/metal
+###
+GET https://d-fry-cse341-personal.herokuapp.com/metal/6289582879dc6ac0bed4dda7
+
+###
+PUT https://d-fry-cse341-personal.herokuapp.com/metal/6289582879dc6ac0bed4dda7/ HTTP/1.1
+content-type: application/json
+
+ {
+    "_id": "6289582879dc6ac0bed4dda7",
+    "metal_name": "PLATINUM",
+    "metal_price": "954.00",
+    "metal_transaction_modifier": "1.12"
+  }
