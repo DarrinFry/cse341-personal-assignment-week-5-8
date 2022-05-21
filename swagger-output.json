@@ -7,6 +7,16 @@
   },
   "host": "d-fry-cse341-personal.herokuapp.com",
   "basePath": "/",
+  "tags": [
+    {
+      "name": "Customer",
+      "description": "Stuff for inputing and changing a customers project file"
+    },
+    {
+      "name": "Metal",
+      "description": "Stuff for handling the metal database"
+    }
+  ],
   "schemes": [
     "https"
   ],
@@ -20,6 +30,7 @@
     },
     "/customer/": {
       "get": {
+        "tags":["Customer"],
         "description": "Get all customers in the database",
         "produces": [
           "application/json"
@@ -35,6 +46,7 @@
         }
       },
       "post": {
+        "tags":["Customer"],
         "description": "Create a new customer",
         "parameters": [
           {
@@ -146,6 +158,7 @@
     },
     "/customer/{id}": {
       "get": {
+        "tags":["Customer"],
         "description": "Get a single customer based on the ID",
         "produces": [
           "application/json"
@@ -168,6 +181,7 @@
         }
       },
       "put": {
+        "tags":["Customer"],
         "description": "Update a customer",
         "parameters": [
           {
@@ -283,6 +297,7 @@
         }
       },
       "delete": {
+        "tags":["Customer"],
         "description": "Delete a customer",
         "parameters": [
           {
@@ -304,6 +319,7 @@
     },
     "/metal/": {
       "get": {
+        "tags":["Metal"],
         "description": "Get all metal price entries in the database",
         "produces": [
           "application/json"
@@ -319,6 +335,7 @@
         }
       },
       "post": {
+        "tags":["Metal"],
         "description": "Create a new Metal entry",
         "parameters": [
           {
@@ -352,6 +369,7 @@
     },
     "/metal/{id}": {
       "get": {
+        "tags":["Metal"],
         "description": "Get a single metal price entry based on the ID",
         "produces": [
           "application/json"
@@ -374,6 +392,7 @@
         }
       },
       "put": {
+        "tags":["Metal"],
         "description": "Update a Metal Entry",
         "parameters": [
           {
@@ -411,6 +430,7 @@
         }
       },
       "delete": {
+        "tags":["Metal"],
         "description": "Delete a Metal",
         "parameters": [
           {
