@@ -1,15 +1,15 @@
 const routes = require('express').Router();
 
-const contactsController = require('../controllers/customer_data');
+const customersController = require('../controllers/customer_data');
 
-routes.get('/', contactsController.getAll);
+routes.get('/', customersController.getAll);
 
-routes.get('/:id', contactsController.getSingle);
+routes.get('/:id', customersController.getSingle);
 
-routes.post('/', contactsController.postNewCustomer);
+routes.post('/', customersController.postNewCustomer);
 
-routes.put('/:id', contactsController.putUpdateCustomer);
+routes.put('/:id', customersController.putUpdateCustomer);
 
-routes.delete('/:id', contactsController.deleteCustomer);
+routes.delete('/:id', customersController.deleteCustomer);
 
 module.exports = routes;
