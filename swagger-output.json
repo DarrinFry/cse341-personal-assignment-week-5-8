@@ -30,7 +30,9 @@
     },
     "/customer/": {
       "get": {
-        "tags":["Customer"],
+        "tags": [
+          "Customer"
+        ],
         "description": "Get all customers in the database",
         "produces": [
           "application/json"
@@ -46,7 +48,9 @@
         }
       },
       "post": {
-        "tags":["Customer"],
+        "tags": [
+          "Customer"
+        ],
         "description": "Create a new customer",
         "parameters": [
           {
@@ -158,7 +162,9 @@
     },
     "/customer/{id}": {
       "get": {
-        "tags":["Customer"],
+        "tags": [
+          "Customer"
+        ],
         "description": "Get a single customer based on the ID",
         "produces": [
           "application/json"
@@ -181,7 +187,9 @@
         }
       },
       "put": {
-        "tags":["Customer"],
+        "tags": [
+          "Customer"
+        ],
         "description": "Update a customer",
         "parameters": [
           {
@@ -297,7 +305,9 @@
         }
       },
       "delete": {
-        "tags":["Customer"],
+        "tags": [
+          "Customer"
+        ],
         "description": "Delete a customer",
         "parameters": [
           {
@@ -319,7 +329,9 @@
     },
     "/metal/": {
       "get": {
-        "tags":["Metal"],
+        "tags": [
+          "Metal"
+        ],
         "description": "Get all metal price entries in the database",
         "produces": [
           "application/json"
@@ -333,43 +345,13 @@
             "description": "Internal Server Error"
           }
         }
-      },
-      "post": {
-        "tags":["Metal"],
-        "description": "Create a new Metal entry",
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "metal_name": {
-                  "example": "any"
-                },
-                "metal_price": {
-                  "example": "any"
-                },
-                "metal_transaction_modifier": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
       }
     },
     "/metal/{id}": {
       "get": {
-        "tags":["Metal"],
+        "tags": [
+          "Metal"
+        ],
         "description": "Get a single metal price entry based on the ID",
         "produces": [
           "application/json"
@@ -392,7 +374,9 @@
         }
       },
       "put": {
-        "tags":["Metal"],
+        "tags": [
+          "Metal"
+        ],
         "description": "Update a Metal Entry",
         "parameters": [
           {
@@ -423,26 +407,6 @@
         "responses": {
           "204": {
             "description": "No Content"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "delete": {
-        "tags":["Metal"],
-        "description": "Delete a Metal",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
           },
           "500": {
             "description": "Internal Server Error"

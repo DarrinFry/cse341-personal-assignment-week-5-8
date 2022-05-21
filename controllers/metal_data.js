@@ -4,6 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req, res, next) => {
   /*
     #swagger.description =  Get all metal price entries in the database
+    #swagger.tags = ['Metal']
   */
   try {
     const result = await mongodb
@@ -23,6 +24,7 @@ const getAll = async (req, res, next) => {
 const getSingle = async (req, res, next) => {
   /*
     #swagger.description =  Get a single metal price entry based on the ID
+    #swagger.tags = ['Metal']
     */
   try {
     const userId = new ObjectId(req.params.id);
@@ -70,6 +72,7 @@ const getSingle = async (req, res, next) => {
 const putUpdateMetal = async (req, res) => {
   /*
     #swagger.description =  Update a Metal Entry
+    #swagger.tags = ['Metal']
   */
   try {
     const userId = new ObjectId(req.params.id);

@@ -9,6 +9,16 @@ const doc = {
   },
   host: 'd-fry-cse341-personal.herokuapp.com',
   schemes: ['https'],
+  "tags": [
+    {
+      "name": "Customer",
+      "description": "Stuff for inputing and changing a customers project file"
+    },
+    {
+      "name": "Metal",
+      "description": "Stuff for handling the metal database"
+    }
+  ],
 };
 
 const outputFile = './swagger-output.json';

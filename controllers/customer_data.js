@@ -4,6 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getAll = async (req, res, next) => {
   /*
     #swagger.description =  Get all customers in the database
+    #swagger.tags = ['Customer']
   */
   try {
     const result = await mongodb
@@ -23,6 +24,7 @@ const getAll = async (req, res, next) => {
 const getSingle = async (req, res, next) => {
   /*
     #swagger.description =  Get a single customer based on the ID
+    #swagger.tags = ['Customer']
     */
   try {
     const userId = new ObjectId(req.params.id);
@@ -43,6 +45,7 @@ const getSingle = async (req, res, next) => {
 const postNewCustomer = async (req, res) => {
   /*
     #swagger.description =  Create a new customer
+    #swagger.tags = ['Customer']
   */
   try {
     const newCustomer = {
@@ -97,6 +100,7 @@ const postNewCustomer = async (req, res) => {
 const putUpdateCustomer = async (req, res) => {
   /*
     #swagger.description =  Update a customer
+    #swagger.tags = ['Customer']
   */
   try {
     const userId = new ObjectId(req.params.id);
@@ -157,6 +161,7 @@ const putUpdateCustomer = async (req, res) => {
 const deleteCustomer = async (req, res) => {
   /*
     #swagger.description =  Delete a customer
+    #swagger.tags = ['Customer']
   */
   try {
     const userId = new ObjectId(req.params.id);
