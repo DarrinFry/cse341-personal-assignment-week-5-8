@@ -16,7 +16,7 @@ const doc = {
     },
     {
       "name": "Metal",
-      "description": "Stuff for handling the metal database"
+      "description": "Stuff for handling the metal database: NOTE. METAL CANNOT BE DELETED OR ADDED. IT CAN ONLY BE EDITED BASED ON METAL MARKETS"
     }
   ],
 };
