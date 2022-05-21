@@ -6,5 +6,6 @@ const routes = require('express').Router();
 
 routes.use('/', require('./swagger'));
 routes.use('/customer', require('./customer'));
+routes.use('/metal', require('./metal'));
 
 module.exports = routes;
