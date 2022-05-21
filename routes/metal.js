@@ -6,10 +6,10 @@ routes.get('/', metalsController.getAll);
 
 routes.get('/:id', metalsController.getSingle);
 
-routes.post('/', metalsController.postNewMetal);
+//routes.post('/', metalsController.postNewMetal); //ALL METALS ARE ADDED. UPDATE ONLY
 
 routes.put('/:id', metalsController.putUpdateMetal);
 
-routes.delete('/:id', metalsController.deleteMetal);
+//routes.delete('/:id', metalsController.deleteMetal); //MAKE IT SO YOU CAN'T DELETE
 
 module.exports = routes;
