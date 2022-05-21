@@ -1,0 +1,35 @@
+[
+    {
+        "client_name": "John Doe",
+        "finger_size": 12345,
+        "current_date": "12/34/56",
+        "project_volume": 121345,
+        "s_08_12mm": 12345,
+        "s_13_17mm": 12345,
+        "s_18_26mm": 12345,
+        "s_27_32mm": 12345,
+        "s_33_35mm": 12345,
+        "s_36_38mm": 12345,
+        "s_39_41mm": 12345,
+        "other_stone_1": 12345,
+        "other_stone_2": 12345,
+        "parts_1": 12345,
+        "parts_2": 12345,
+        "prong_set_standard": 12345,
+        "prong_set_fancy": 12345,
+        "channel_set_standard": 12345,
+        "channel_set_fancy": 12345,
+        "bezel_flush_standard": 12345,
+        "bezel_flush_fancy": 12345,
+        "plating": true,
+        "solder": 12345,
+        "laser": 12345,
+        "texture": 12345,
+        "center_stone_settting_RETAIL": 12345,
+        "other_labor_RETAIL": 12345,
+        "casting": true,
+        "CAD_modifier": 1.5
+
+        
+    }
+]

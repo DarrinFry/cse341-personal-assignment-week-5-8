@@ -6,18 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "swagger": "node ./swaggere.js"
+    "swagger": "node ./swagger.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DarrinFry/cse341-personal-assignment.git"
+    "url": "git+https://github.com/DarrinFry/cse341-personal-assignment-week-5-8.git"
   },
   "author": "Darrin Fry",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DarrinFry/cse341-personal-assignment/issues"
+    "url": "https://github.com/DarrinFry/cse341-personal-assignment-week-5-8/issues"
   },
-  "homepage": "https://github.com/DarrinFry/cse341-personal-assignment#readme",
+  "homepage": "https://github.com/DarrinFry/cse341-personal-assignment-week-5-8#readme",
   "dependencies": {
     "body-parser": "^1.20.0",
     "dotenv": "^16.0.1",

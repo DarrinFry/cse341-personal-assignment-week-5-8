@@ -10,11 +10,14 @@ const app = express();
 
 const MongoClient = require('mongodb').MongoClient;
 const uri = process.env.MONGO_DB_URI;
+
+/*CONTECTING TO MONGO TEST. TEST CONFIRMED. KEEPING FOR FUTURE USE IF NEEDED
+
 MongoClient.connect(uri, function (err, db) {
   if (err) throw err;
   var dbo = db.db(process.env.PARENT_FOLDER);
   dbo
-    .collection(process.env.CHILD_FOLDER)
+    .collection(process.env.PROJECT_DETAILS)
     .find()
     .toArray(function (err, result) {
       if (err) throw err;
@@ -22,6 +25,8 @@ MongoClient.connect(uri, function (err, db) {
       db.close();
     });
 });
+
+*/
 
 app
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))

@@ -1,0 +1,20 @@
+[
+    {
+        "LABOR_prong_set_standard": 12345,
+        "LABOR_prong_set_fancy": 12345,
+        "LABOR_channel_set_standard": 12345,
+        "LABOR_channel_set_fancy": 12345,
+        "LABOR_bezel_flush_standard": 12345,
+        "LABOR_bezel_flush_fancy": 12345,
+        "LABOR_plating": 12345,
+        "LABOR_solder": 12345,
+        "LABOR_laser": 12345,
+        "LABOR_texture": 12345,
+        "LABOR_center_stone_settting_MODIFIER": 12345,
+        "LABOR_other_labor_MODIFIER": 12345,
+        "LABOR_casting": 12345,
+        "LABOR_CAD_modifier": 12345
+
+        
+    }
+]

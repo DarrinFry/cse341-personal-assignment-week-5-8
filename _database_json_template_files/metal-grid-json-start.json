@@ -1,0 +1,7 @@
+[
+    {
+        "metal_name": "metal name goes here",
+        "metal_price": 12345,
+        "metal_transaction_modifier": 1.1
+    }
+]

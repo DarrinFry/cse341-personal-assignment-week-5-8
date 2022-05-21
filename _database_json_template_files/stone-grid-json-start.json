@@ -1,0 +1,9 @@
+[
+    {
+        "stone_size_range": "eg. 0.9mm-1.2mm",
+        "VS_price": 12345,
+        "SI_Price": 121345,
+        "I_Price": 12345,
+        "natural": true
+    }
+]
