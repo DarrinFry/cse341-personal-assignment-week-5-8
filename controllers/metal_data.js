@@ -11,7 +11,7 @@ const getAll = async (req, res, next) => {
       .getDb()
       .db(process.env.PARENT_FOLDER)
       .collection(process.env.METAL_PRICE)
-      .find();
+      .find()
       .toArray((err, lists) => {
         if (err) {
           res.status(400).json({ message: err });
@@ -38,7 +38,7 @@ const getSingle = async (req, res, next) => {
       .getDb()
       .db(process.env.PARENT_FOLDER)
       .collection(process.env.METAL_PRICE)
-      .find({ _id: userId });
+      .find({ _id: userId })
       .toArray((err, lists) => {
         if (err) {
           res.status(400).json({ message: err });
