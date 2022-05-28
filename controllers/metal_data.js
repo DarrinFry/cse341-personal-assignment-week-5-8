@@ -12,10 +12,13 @@ const getAll = async (req, res, next) => {
       .db(process.env.PARENT_FOLDER)
       .collection(process.env.METAL_PRICE)
       .find();
-    result.toArray().then((lists) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists);
-    });
+      .toArray((err, lists) => {
+        if (err) {
+          res.status(400).json({ message: err });
+        }
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists);
+      });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -27,16 +30,22 @@ const getSingle = async (req, res, next) => {
     #swagger.tags = ['Metal']
     */
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('User ID is not a valid Mongo ID');
+    }
     const userId = new ObjectId(req.params.id);
     const result = await mongodb
       .getDb()
       .db(process.env.PARENT_FOLDER)
       .collection(process.env.METAL_PRICE)
       .find({ _id: userId });
-    result.toArray().then((lists) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists[0]);
-    });
+      .toArray((err, lists) => {
+        if (err) {
+          res.status(400).json({ message: err });
+        }
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists);
+      });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -75,6 +84,9 @@ const putUpdateMetal = async (req, res) => {
     #swagger.tags = ['Metal']
   */
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('User ID is not a valid Mongo ID');
+    }
     const userId = new ObjectId(req.params.id);
     const updatedMetal = {
         metal_name: req.body.metal_name,

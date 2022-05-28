@@ -1,15 +1,18 @@
 const routes = require('express').Router();
 
 const customersController = require('../controllers/customer_data');
+const validation = require('../middleware/validation-middleware');
+
 
 routes.get('/', customersController.getAll);
 
 routes.get('/:id', customersController.getSingle);
 
-routes.post('/', customersController.postNewCustomer);
+routes.post('/', validation.customerValidation, customersController.postNewCustomer);
 
-routes.put('/:id', customersController.putUpdateCustomer);
+routes.put('/:id', validation.customerValidation, customersController.putUpdateCustomer);
 
 routes.delete('/:id', customersController.deleteCustomer);
 
 module.exports = routes;
+

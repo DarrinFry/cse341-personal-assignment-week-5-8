@@ -11,11 +11,14 @@ const getAll = async (req, res, next) => {
       .getDb()
       .db(process.env.PARENT_FOLDER)
       .collection(process.env.PROJECT_DETAILS)
-      .find();
-    result.toArray().then((lists) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists);
-    });
+      .find()
+      .toArray((err, lists) => {
+        if (err) {
+          res.status(400).json({ message: err });
+        }
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists);
+      });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -27,16 +30,22 @@ const getSingle = async (req, res, next) => {
     #swagger.tags = ['Customer']
     */
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('User ID is not a valid Mongo ID');
+    }
     const userId = new ObjectId(req.params.id);
     const result = await mongodb
       .getDb()
       .db(process.env.PARENT_FOLDER)
       .collection(process.env.PROJECT_DETAILS)
       .find({ _id: userId });
-    result.toArray().then((lists) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists[0]);
-    });
+      .toArray((err, lists) => {
+        if (err) {
+          res.status(400).json({ message: err });
+        }
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists);
+      });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -85,7 +94,7 @@ const postNewCustomer = async (req, res) => {
       .db(process.env.PARENT_FOLDER)
       .collection(process.env.PROJECT_DETAILS)
       .insertOne(newCustomer);
-    //error response was inserted from the instructors code.
+
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
@@ -96,13 +105,16 @@ const postNewCustomer = async (req, res) => {
   }
 };
 
-//logic of the update was mirrored from the getSingle(since all we want is to find someone based on their ID).
+
 const putUpdateCustomer = async (req, res) => {
   /*
     #swagger.description =  Update a customer
     #swagger.tags = ['Customer']
   */
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('User ID is not a valid Mongo ID');
+    }
     const userId = new ObjectId(req.params.id);
     const updatedCustomer = {
       client_name: req.body.client_name,
@@ -157,13 +169,15 @@ const putUpdateCustomer = async (req, res) => {
   }
 };
 
-//logic and const used from single and update
 const deleteCustomer = async (req, res) => {
   /*
     #swagger.description =  Delete a customer
     #swagger.tags = ['Customer']
   */
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('User ID is not a valid Mongo ID');
+    }
     const userId = new ObjectId(req.params.id);
     const response = await mongodb
       .getDb()
@@ -171,7 +185,6 @@ const deleteCustomer = async (req, res) => {
       .collection(process.env.PROJECT_DETAILS)
       .deleteOne({ _id: userId });
 
-    //error response was inserted from the instructors code.
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
