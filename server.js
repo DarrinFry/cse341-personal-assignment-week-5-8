@@ -5,12 +5,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const { auth } = require('express-openid-connect');
+const { requiresAuth } = require('express-openid-connect');
 
 const port = process.env.PORT || 8080;
 const app = express();
 
 const MongoClient = require('mongodb').MongoClient;
 const uri = process.env.MONGO_DB_URI;
+const apiRoute = 'http://localhost:8080/api-docs/';
 
 /*CONTECTING TO MONGO TEST. TEST CONFIRMED. KEEPING FOR FUTURE USE IF NEEDED
 
@@ -61,6 +63,8 @@ mongodb.initDb((err, mongodb) => {
 });
 
 
+//This video: https://www.youtube.com/watch?v=QQwo4E_B0y8
+//And the authO.com application quickstart helped me set up this section.
 
 const config = {
   authRequired: false,
@@ -78,3 +82,28 @@ app.use(auth(config));
 app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
+
+
+app.get('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+});
+
+app.get('/swagger', requiresAuth(), (req, res) => {
+  //res.send(`Hello ${req.oidc.user.sub}, this is the API-Docs Page`);
+  res.redirect(apiRoute);
+});
+
+// app.use(
+//   auth({
+//     routes: {
+//       Login: false,
+//       postLogoutRedirect: '/api-docs',
+//     },
+//   })
+// );
+
+// app.get('/login', (req, res) => res.oidc.login({ returnTo: '/api-docs'}));
+
+// app.get('/logout', (req, res) => res.send('Bye!'));
+
+
