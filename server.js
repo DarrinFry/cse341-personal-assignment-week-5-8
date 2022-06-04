@@ -12,7 +12,7 @@ const app = express();
 
 const MongoClient = require('mongodb').MongoClient;
 const uri = process.env.MONGO_DB_URI;
-const apiRoute = 'http://localhost:8080/api-docs/';
+const apiRoute = 'https://d-fry-cse341-personal.herokuapp.com/api-docs/';
 
 /*CONTECTING TO MONGO TEST. TEST CONFIRMED. KEEPING FOR FUTURE USE IF NEEDED
 
@@ -62,9 +62,20 @@ mongodb.initDb((err, mongodb) => {
   }
 });
 
+/*
+These are the sources I have used to work on Authentication.
+I have chosen the 3rd party AuthO app to simplify the process.
 
-//This video: https://www.youtube.com/watch?v=QQwo4E_B0y8
-//And the authO.com application quickstart helped me set up this section.
+https://www.youtube.com/playlist?list=PLZ14qQz3cfJIGJ_7GBZgr96Sq2hDeRsYY
+
+https://www.youtube.com/watch?v=w1zvS9-k7EU
+https://www.youtube.com/watch?v=QQwo4E_B0y8
+https://auth0.com/docs/quickstart/webapp/express/01-login
+https://www.infoworld.com/article/3629129/how-to-use-auth0-with-nodejs-and-express.html
+
+I will update this list of references as needed
+*/
+
 
 const config = {
   authRequired: false,
