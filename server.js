@@ -93,6 +93,7 @@ I will update this list of references as needed
 // req.isAuthenticated is provided from the auth router
 app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+  res.send(`API-Docs  ---- <button><a href='${apiRoute}'>API-DOCS</a></button>`);
 });
 
 
