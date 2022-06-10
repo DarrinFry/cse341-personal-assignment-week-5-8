@@ -6,6 +6,7 @@ const doc = {
   info: {
     title: 'Darrin Fry Personal Assignment API Week 5-8',
     description: 'Custom Projects API  Please watch this video to understand the end goal from the project and the reason for these databases and APIs: https://youtu.be/u_Lqnaghzok  ',
+    version: `<button onclick='${process.env.BASE_URL}'> Logout </button>`,
   },
   host: 'd-fry-cse341-personal.herokuapp.com',
   schemes: ['https'],
