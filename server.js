@@ -104,8 +104,6 @@ app.get('/swagger', requiresAuth(), (req, res) => {
   res.redirect(apiRoute);
 });
 
-app.use('/api-docs/', requiresAuth(), swaggerUi.serve);
-app.get('/api-docs/', requiresAuth(), swaggerUi.setup(swaggerDocument));
 // app.use(
 //   auth({
 //     routes: {
