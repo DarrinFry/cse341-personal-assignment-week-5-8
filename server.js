@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
 const { auth } = require('express-openid-connect');
 const { requiresAuth } = require('express-openid-connect');
-
+const path = require('path');
 const port = process.env.PORT || 8080;
 const app = express();
 
@@ -89,16 +89,17 @@ https://www.infoworld.com/article/3629129/how-to-use-auth0-with-nodejs-and-expre
 I will update this list of references as needed
 */
 
-
+app.use(express.static('./'));
 // req.isAuthenticated is provided from the auth router
 app.get('/', (req, res) => {
-  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+  //res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
   if(req.oidc.isAuthenticated()) {
-    res.sendFile('loggedIn.html');
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname+'/loggedIn.html'));
   } else {
-    res.sendFile('loggedOut.html');
-  }
- 
+    res.setHeader('Content-Type', 'text/html');
+    res.sendFile(path.join(__dirname+'/loggedOut.html'));
+  };
 });
 
 
