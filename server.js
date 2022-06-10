@@ -31,8 +31,21 @@ MongoClient.connect(uri, function (err, db) {
 
 */
 
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: process.env.SECRET,
+  baseURL: process.env.BASE_URL,
+  clientID: process.env.CLIENT_ID,
+  issuerBaseURL: process.env.ISSUER_BASE_URL
+};
+
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+app.use(auth(config));
+
+
 app
-  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+  .use('/api-docs', requiresAuth(), swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use(bodyParser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -77,18 +90,6 @@ I will update this list of references as needed
 */
 
 
-const config = {
-  authRequired: false,
-  auth0Logout: true,
-  secret: process.env.SECRET,
-  baseURL: process.env.BASE_URL,
-  clientID: process.env.CLIENT_ID,
-  issuerBaseURL: process.env.ISSUER_BASE_URL
-};
-
-// auth router attaches /login, /logout, and /callback routes to the baseURL
-app.use(auth(config));
-
 // req.isAuthenticated is provided from the auth router
 app.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
@@ -100,6 +101,10 @@ app.get('/profile', requiresAuth(), (req, res) => {
 });
 
 app.get('/swagger', requiresAuth(), (req, res) => {
+  //res.send(`Hello ${req.oidc.user.sub}, this is the API-Docs Page`);
+  res.redirect(apiRoute);
+});
+app.get('/api-docs', requiresAuth(), (req, res) => {
   //res.send(`Hello ${req.oidc.user.sub}, this is the API-Docs Page`);
   res.redirect(apiRoute);
 });
