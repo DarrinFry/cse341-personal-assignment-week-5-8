@@ -5,7 +5,7 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'Darrin Fry Personal Assignment API Week 5-8',
-    description: `Custom Projects API  Please watch this video to understand the end goal from the project and the reason for these databases and APIs: https://youtu.be/u_Lqnaghzok  ---- <input type='button' onclick='location.href="${process.env.BASE_URL}/logout";' value='Logout' /> ---- `,
+    description: 'Custom Projects API -- Please watch this video to understand the end goal from the project and the reason for these databases and APIs: https://youtu.be/u_Lqnaghzok  ---- <button><a href="https://d-fry-cse341-personal.herokuapp.com/logout">LOGOUT</a></button> ---- ',
   },
   host: 'd-fry-cse341-personal.herokuapp.com',
   schemes: ['https'],

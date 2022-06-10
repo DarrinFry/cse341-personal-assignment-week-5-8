@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "Darrin Fry Personal Assignment API Week 5-8",
-    "description": "Custom Projects API  Please watch this video to understand the end goal from the project and the reason for these databases and APIs: https://youtu.be/u_Lqnaghzok  ---- <input type='button' onclick='location.href=\"undefined/logout\";' value='Logout' /> ---- ",
+    "description": "Custom Projects API -- Please watch this video to understand the end goal from the project and the reason for these databases and APIs: https://youtu.be/u_Lqnaghzok  ---- <button><a href=\"https://d-fry-cse341-personal.herokuapp.com/logout\">LOGOUT</a></button> ---- ",
     "version": "1.0.0"
   },
   "host": "d-fry-cse341-personal.herokuapp.com",
